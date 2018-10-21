@@ -5,6 +5,7 @@ body{
 	margin: 0;
 }
 .wrapper{
+	width: 100%;
 	text-align: center;
 }
 .block_first{
@@ -16,7 +17,7 @@ body{
 .header{
 	font-size: 0;
 	text-align: left;
-	margin-left: 374px;
+	margin-left: 20vw;
 }
 .bino_logo{
 	display: inline-block;
@@ -41,12 +42,11 @@ body{
 	cursor: pointer;
 }
 .bino_logo+.nav_button{
-	margin-left: 301px;
+	margin-left: 16vw;
 }
 .block_first_content{
 	margin-top: 233px;
 	position: relative;
-
 }
 .above_title{
 	color: #f4f5f9;
@@ -71,39 +71,10 @@ body{
 	vertical-align: middle;
 	margin-left: 14px;
 }
-.prev_button{
-	width: 45px;
-	height: 45px;
-	opacity: 0.25;
-	background: url(fa-angle-left.png) no-repeat 50% 50% grey;
-	position: absolute;
-	left: 50px;
-}
-.next_button{
-	width: 45px;
-	height: 45px;
-	opacity: 0.25;
-	background: url(fa-angle-left.png) no-repeat 50% 50% grey;
-	position: absolute;
-	right: 50px;
-	transform: rotate(180deg);
-}
-.next_button:hover{
-	cursor: pointer;
-	background: url(fa-angle-right.svg) no-repeat 50% 50% #e74c3c;
-	transform: none;
-	opacity: 1;
-}
-.prev_button:hover{
-	cursor: pointer;
-	background: url(fa-angle-right.svg) no-repeat 50% 50% #e74c3c;
-	transform: rotate(180deg);
-	opacity: 1;
-}
 .text{
 	display: inline-block;
 	margin-top: 47px;
-	width: 580px;
+	width: 580px; 
 	color: #cbc6c0;
 	font-family: "Open Sans";
 	font-size: 14px;
@@ -127,7 +98,6 @@ body{
 	letter-spacing: 0.12px;
 	border-radius: 2px;
 	line-height: 50px;
-
 }
 .und_button+.und_button{
 	margin-left: 30px;
@@ -136,10 +106,107 @@ body{
 	cursor: pointer;
 	background-color: #e74c3c;
 	border-color: #e74c3c; 
+	box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.25);
+}
+.anchor_button{
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	background: url(anchor_img.png) no-repeat 50% 50% #f4f5f9;
+	margin: 0 auto;
+	position: relative;
+	bottom: -30px;
+}
+.anchor_button:hover{
+  	box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.25);
+  	transition: 0.3s;
+	cursor: pointer;
+}
+#slider{ 
+	margin: 0 auto;
+}
+#slides article{ 
+	width: 20%;
+	float: left;
+}
+#slides .texts{ 
+	width: 500%;
+}
+#overflow{ 
+	width: 100%;
+	overflow: hidden;
+}
+article span{ 
+	width: 100%;
+}
+#desktop:checked ~ #slider{ 
+	max-width: 580px; 
+}
+#switch1:checked ~ #controls_left label:nth-child(5), 
+#switch2:checked ~ #controls_left label:nth-child(1),
+#switch3:checked ~ #controls_left label:nth-child(2),
+#switch4:checked ~ #controls_left label:nth-child(3),
+#switch5:checked ~ #controls_left label:nth-child(4){
+    width: 45px;
+	height: 45px;
+	opacity: 0.5;
+	background: url(fa-angle-left.png) no-repeat 50% 50% grey;
+	position: absolute;
+    left: 50px;
+    bottom: 500px;
+}
+#switch1:checked ~ #controls_right label:nth-child(2), 
+#switch2:checked ~ #controls_right label:nth-child(3),
+#switch3:checked ~ #controls_right label:nth-child(4),
+#switch4:checked ~ #controls_right label:nth-child(5),
+#switch5:checked ~ #controls_right label:nth-child(1){
+	width: 45px;
+	height: 45px;
+	opacity: 0.5;
+	background: url(fa-angle-left.png) no-repeat 50% 50% grey;
+	position: absolute;
+    right: 50px;
+    bottom: 500px;
+	transform: rotate(180deg);
+}
+label{
+	cursor: pointer;
+}
+.all input{ 
+	display: none;
+}
+#switch1:checked ~ #slides .texts{
+	margin-left: 0;
+}
+#switch2:checked ~ #slides .texts{
+	margin-left: -100%;
+}
+#switch3:checked ~ #slides .texts{
+	margin-left: -200%;
+}
+#switch4:checked ~ #slides .texts{
+	margin-left: -300%;
+}
+#switch5:checked ~ #slides .texts{
+	margin-left: -400%;
+}
+#slides .texts{ /*анимация пролистывания изображений*/
+	transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+#controls_left label:hover{ /*прозрачность стрелок при наведении*/
+	background: url(fa-angle-right.svg) no-repeat 50% 50% #e74c3c !important;
+	transform: rotate(180deg);
+	opacity: 1 !important;
+}
+#controls_right label:hover{ /*прозрачность стрелок при наведении*/
+	background: url(fa-angle-right.svg) no-repeat 50% 50% #e74c3c !important;
+	transform: none !important;
+	opacity: 1 !important;
 }
 .block_second{
 	padding-top: 125px;
 	padding-bottom: 112px; 
+	border-bottom: 1px solid #e6e7eb;
 }
 .item_block_second{
 	display: inline-block;
@@ -150,6 +217,16 @@ body{
 	height: 73px;
 	line-height: 73px;
 	margin: 0 auto;
+	background: url(glasses.png) no-repeat 50% 50%;
+}
+#CCode .button_container{
+	background: url(hearth.png) no-repeat 50% 50%;
+}
+#CreIdeas .button_container{
+	background: url(bulb.png) no-repeat 50% 50%;
+}
+#FreeSup .button_container{
+	background: url(clouds.png) no-repeat 50% 50%;
 }
 .item_button{
 	width: 73px;
@@ -161,6 +238,7 @@ body{
 	cursor: pointer;
 	transform: rotate(45deg);
 	border-color: #e74c3c;
+	transition: 0.3s;
 }
 .item_title{
 	margin-top: 30px;
@@ -187,4 +265,189 @@ body{
 }
 .item_block_second+.item_block_second{
 	margin-left: 56px;
+}
+.block_third {
+ padding: 140px 0 145px;
+}
+.monitor{
+	display: inline-block;
+	vertical-align: top;
+}
+.OurHistory{
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 75px;
+	text-align: left;
+}
+.OurHistoryTitle{
+	color: #6a6a6a;
+	font-family: "Source Sans Pro";
+	font-size: 36px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 3.6px;
+	vertical-align: top;
+	margin-top: 0;
+	border-left: 6px solid #e74c3c;
+	padding-left: 30px;  
+}
+.OurHistoryDiscr{
+	width: 582px;
+	color: #999999;
+	font-family: "Source Sans Pro";
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 29px;
+}
+.OurHistoryDiscr + .und_button{
+	margin-top: 45px;
+	text-align: center;
+	background-color:#6a6a6a;
+	border-color: #6a6a6a; 
+	box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.25);
+}
+.OurHistoryDiscr + .und_button:hover{
+	background-color: #e74c3c;
+	border-color: #e74c3c;
+}
+.block_fourth{
+
+}
+.OurServices{
+width: 54vw;
+background-color: #202020;
+padding: 150px 80px 150px 50px;
+text-align: right;
+}
+.OurServicesTtl{
+color: #f4f5f9;
+font-family: "Source Sans Pro";
+font-size: 36px;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 3.6px;
+margin: 0;
+border-right: 6px solid #e74c3c;
+padding-right: 30px;
+}
+.OurServicesContent{
+margin-top: 70px;
+}
+.ServiceTtl{
+color: #e74c3c;
+font-family: "Open Sans";
+font-size: 18px;
+font-weight: 400;
+text-transform: uppercase;
+}
+.ServiceDiscr{
+	display: inline-block;
+	width: 560px;
+	color: #999999;
+	font-family: "Source Sans Pro";
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 29px;
+}
+.ServiceContainer + .ServiceContainer{
+	margin-top: 50px;
+}
+.BlockFifth{
+padding-top: 140px; 
+}
+.RecentWorksTtl{
+color: #6a6a6a;
+font-family: "Source Sans Pro";
+font-size: 36px;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 3.6px;
+margin-top: 0;
+}
+.RecentWorksDiscr{
+color: #999999;
+font-family: "Open Sans";
+font-size: 14px;
+font-weight: 400;
+}
+.underTitleDec{
+	margin-top: 30px;
+}
+.line{
+	display: inline-block;
+	vertical-align: middle;
+	width: 80px;
+	height: 2px;
+	border: 1px solid #999999;
+}
+.circ{
+	display: inline-block;
+	vertical-align: middle;
+	width: 8px;
+	height: 7px;
+	background-color: #e74c3c;
+	border-radius: 50%;
+}
+.underTitleDec > div + div{
+	margin-left: 10px;
+}
+.RecentWorksMosaicLine{
+	font-size: 0;
+	margin: 0;
+}
+.ContainerForImg{
+	display: inline-block;
+	position: relative;
+	width: 24.77vw;
+}
+.MosImgHov{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(231, 76, 60, 0.8);
+	text-align: left;
+	display: none;
+}
+.MosImg{
+	width: inherit;
+}
+.bordPart{
+	position: relative;
+	width: 44px;
+	height: 4px;
+	background-color: #ffffff;
+}
+.ShirtDes{	
+	color: #ffffff;
+	font-family: "Source Sans Pro";
+	font-size: 24px;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 1.2px;
+}
+.MosImgHovCont{
+	position: absolute;
+	bottom: 10%;
+	left: 10%;
+	display: none
+}
+.adr{
+	display: inherit;
+	text-align: left;
+	color: #ffffff;
+	font-family: "Open Sans";
+	font-size: 14px;
+	font-weight: 400;
+	letter-spacing: 0.7px;
+}
+.ContainerForImg:hover .MosImgHov{
+	display: block;
+	cursor: pointer;
+}
+.ContainerForImg:hover .MosImgHovCont{
+	display: block;
+}
+.MosImgHovCont:hover{
+	cursor: pointer;
 }

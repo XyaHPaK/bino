@@ -16,8 +16,10 @@ body{
 }
 .header{
 	font-size: 0;
-	text-align: left;
-	margin-left: 20vw;
+}
+.header::after{
+	text-align: justify;
+	width: 100%;
 }
 .bino_logo{
 	display: inline-block;
@@ -190,15 +192,15 @@ label{
 #switch5:checked ~ #slides .texts{
 	margin-left: -400%;
 }
-#slides .texts{ /*анимация пролистывания изображений*/
+#slides .texts{ 
 	transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
 }
-#controls_left label:hover{ /*прозрачность стрелок при наведении*/
+#controls_left label:hover{ 
 	background: url(fa-angle-right.svg) no-repeat 50% 50% #e74c3c !important;
 	transform: rotate(180deg);
 	opacity: 1 !important;
 }
-#controls_right label:hover{ /*прозрачность стрелок при наведении*/
+#controls_right label:hover{ 
 	background: url(fa-angle-right.svg) no-repeat 50% 50% #e74c3c !important;
 	transform: none !important;
 	opacity: 1 !important;
@@ -252,6 +254,8 @@ label{
 .underline{
 	display: inline-block;
 	margin-top: 18px;
+	width: 40px;
+	height: 1px;
 }
 .item_text{
 	margin-top: 17px;
@@ -311,38 +315,41 @@ label{
 	border-color: #e74c3c;
 }
 .block_fourth{
-
+	font-size: 0;
+	text-align: left;
 }
 .OurServices{
-width: 54vw;
-background-color: #202020;
-padding: 150px 80px 150px 50px;
-text-align: right;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: 55%;
+	background-color: #202020;
+	padding: 112px 80px 141px 20%;
+	text-align: right;
 }
 .OurServicesTtl{
-color: #f4f5f9;
-font-family: "Source Sans Pro";
-font-size: 36px;
-font-weight: 700;
-text-transform: uppercase;
-letter-spacing: 3.6px;
-margin: 0;
-border-right: 6px solid #e74c3c;
-padding-right: 30px;
+	color: #f4f5f9;
+	font-family: "Source Sans Pro";
+	font-size: 36px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 3.6px;
+	margin: 0;
+	border-right: 6px solid #e74c3c;
+	padding-right: 30px;
 }
 .OurServicesContent{
-margin-top: 70px;
+	margin-top: 70px;
 }
 .ServiceTtl{
-color: #e74c3c;
-font-family: "Open Sans";
-font-size: 18px;
-font-weight: 400;
-text-transform: uppercase;
+	color: #e74c3c;
+	font-family: "Open Sans";
+	font-size: 18px;
+	font-weight: 400;
+	text-transform: uppercase;
 }
 .ServiceDiscr{
 	display: inline-block;
-	width: 560px;
 	color: #999999;
 	font-family: "Source Sans Pro";
 	font-size: 14px;
@@ -352,23 +359,107 @@ text-transform: uppercase;
 .ServiceContainer + .ServiceContainer{
 	margin-top: 50px;
 }
+.OurServicesIcon{
+	position: absolute;
+	right: -4%;
+	top: 34%;
+	z-index: 1;
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	background: url(Icon1.png) no-repeat 50% 50% #f4f5f9;
+}
+.OurServicesIcon:hover{
+	box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.25);
+	transition: 0.3s;
+	cursor: pointer;
+}
+.OurServicesIcon + .OurServicesIcon{
+	right: -4%;
+	top: 53%;
+	background: url(Icon2.png) no-repeat 50% 50% #f4f5f9;
+}
+.OurServicesIcon + .OurServicesIcon + .OurServicesIcon{
+	right: -4%;
+	top: 72%;
+	background: url(Icon3.png) no-repeat 50% 50% #f4f5f9;
+}
+.OurServicesSlider{
+	position: relative;
+	vertical-align: middle;
+	display: inline-block;
+	width: 45%;
+}
+#slides2 article{ 
+	width: 20%;
+	float: left;
+}
+#slides2 .image{ 
+	width: 500%;
+	line-height: 0;
+}
+#overflow2{ 
+	width: 100%;
+	overflow: hidden;
+}
+article img{
+	height: 770px; 
+	width: 100%;
+}
+.allForSlider2 input{ 
+	display: none;
+}
+#switch11:checked ~ #slides2 .image{
+	margin-left: 0;
+}
+#switch22:checked ~ #slides2 .image{
+	margin-left: -100%;
+}
+#switch33:checked ~ #slides2 .image{
+	margin-left: -200%;
+}
+#active label{ 
+	display: block; 
+	width: 1px;
+	height: 35px;
+	border: 1px solid rgba(153, 153, 153, 0.25);
+}
+#active label + label{
+	margin-top: 10px;
+}	
+#active{ 
+	position: absolute;
+	left: -115%;
+	top: 45%;	
+}
+#active label:hover{ 
+	border: 1px solid #e74c3c;
+}
+#switch11:checked ~ #active label:nth-child(1),
+#switch22:checked ~ #active label:nth-child(2),
+#switch33:checked ~ #active label:nth-child(3){
+	border: 2px solid #e74c3c;
+}
+#slides2 .image{ 
+	transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
 .BlockFifth{
-padding-top: 140px; 
+	padding-top: 140px; 
 }
 .RecentWorksTtl{
-color: #6a6a6a;
-font-family: "Source Sans Pro";
-font-size: 36px;
-font-weight: 700;
-text-transform: uppercase;
-letter-spacing: 3.6px;
-margin-top: 0;
+	color: #6a6a6a;
+	font-family: "Source Sans Pro";
+	font-size: 36px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 3.6px;
+	margin-top: 0;
 }
 .RecentWorksDiscr{
-color: #999999;
-font-family: "Open Sans";
-font-size: 14px;
-font-weight: 400;
+	color: #999999;
+	font-family: "Open Sans";
+	font-size: 14px;
+	font-weight: 400;
 }
 .underTitleDec{
 	margin-top: 30px;
@@ -377,28 +468,51 @@ font-weight: 400;
 	display: inline-block;
 	vertical-align: middle;
 	width: 80px;
-	height: 2px;
-	border: 1px solid #999999;
+	height: 1px;
+	background:  #999999;
 }
 .circ{
 	display: inline-block;
 	vertical-align: middle;
 	width: 8px;
-	height: 7px;
+	height: 8px;
 	background-color: #e74c3c;
 	border-radius: 50%;
 }
 .underTitleDec > div + div{
 	margin-left: 10px;
 }
-.RecentWorksMosaicLine{
+.RWSelectBtns{
+margin-top: 70px;
+}
+.RWSelectBtns span{
+	color: #999999;
+	font-family: "Open Sans";
+	font-size: 14px;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+.RWSelectBtns span + span{
+	margin-left: 15px;
+}
+.RWSelectBtns #RWSelectBtn:hover{
+	cursor: pointer;
+	font-weight: 700;
+	color: #e74c3c;
+}
+.RecentWorksMosaic{
+	margin-top: 50px;
 	font-size: 0;
+	text-align: left;
+}
+.RecentWorksMosaicLine{
 	margin: 0;
+	display: inline-block;
 }
 .ContainerForImg{
 	display: inline-block;
 	position: relative;
-	width: 24.77vw;
+	width: 24.65vw;
 }
 .MosImgHov{
 	position: absolute;
@@ -450,4 +564,133 @@ font-weight: 400;
 }
 .MosImgHovCont:hover{
 	cursor: pointer;
+}
+.blockSixth{
+	position: relative;
+	padding-top: 150px;
+}
+.CaseStudyImg{
+	margin-right: -30%;
+	margin-top: 70px;
+}
+.CaseStudySlider{
+	position: absolute;
+	top: 38%;
+	left: 19%;
+	width: 665px;
+	height: 630px;
+	padding: 0 60px;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+	background-color: #ffffff;
+}
+.IconContainer{
+	display: inline-block;
+	margin-top: 80px; 
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	background: #e74c3c;
+	transform: rotate(45deg);
+}
+.IconImg{
+	vertical-align: middle;
+	transform: rotate(-45deg);
+	width: 21px;
+	height: 34px;
+}
+.caseStudyTtl{
+	margin-top: 55px;
+	color: #6a6a6a;
+	font-family: "Open Sans";
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1.35px;
+}
+.caseStudyTtlDiscr{
+	margin-top: 30px; 
+	color: #999999;
+	font-family: "Source Sans Pro";
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 24px;
+	letter-spacing: 1.05px;
+}
+.caseStudyTtlDiscr + .und_button{
+	margin-top: 50px; 
+	width: 145px;
+	height: 46px;
+	line-height: 46px;
+	background-color: #6a6a6a;
+	border-color: #6a6a6a;
+	box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.25);
+	font-size: 12px;
+	font-weight: 400;
+	letter-spacing: 0.14px;
+}
+.caseStudyTtlDiscr + .und_button:hover{
+	background-color: #e74c3c;
+	border-color: #e74c3c;
+}
+
+
+#slides3 article{ 
+	width: 20%;
+	float: left;
+}
+
+#slides3 .SlideContent{ 
+	width: 500%;
+}
+
+#overflow3{ 
+	width: 100%;
+	overflow: hidden;
+}
+
+article div{ 
+	width: 100%;
+}
+
+.CaseStudySlider input{ 
+	display: none;
+}
+
+#switch13:checked ~ #slides3 .SlideContent{
+	margin-left: 0;
+}
+
+#switch23:checked ~ #slides3 .SlideContent{
+	margin-left: -100%;
+}
+
+#switch333:checked ~ #slides3 .SlideContent{
+	margin-left: -200%;
+}
+
+#active3 label{ 
+	border-radius: 10px; 
+	display: inline-block; 
+	width: 12px;
+	height: 12px;
+	background-color: #f4f5f9;;
+}
+
+#active3{ 
+	margin: 10% 0;
+}
+
+#active3 label:hover{ 
+	background-color: #e74c3c;	
+}
+
+
+#switch13:checked ~ #active3 label:nth-child(1),
+#switch23:checked ~ #active3 label:nth-child(2),
+#switch333:checked ~ #active3 label:nth-child(3){
+	background-color: #e74c3c;
+}
+
+#slides3 .SlideContent{
+	transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
 }

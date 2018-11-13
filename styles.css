@@ -828,7 +828,7 @@ article div{
 	position: relative;
 	padding-top: 150px;
 	height: 750px;
-	background: url(Curve.png) no-repeat 0 100%/contain, url(Background9.png) no-repeat 50% 50%/cover;
+	background: url(Curve.png) no-repeat 0 100% / 101% 80%, url(Background9.png) no-repeat 50% 50%/cover;
 }
 .blockNinth > .RecentWorksTtl{
 	color: #ffffff;
@@ -841,26 +841,87 @@ article div{
 }
 .ava{
 	position: absolute;
-	top: 0%;
-	left: 0%;
+	top: 66%;
+    left: 13%;
 	width: 60px;
 	height: 60px;
 	border-radius: 50%;
 	border: solid 5px #e74c3c;
-	background: url(member1.png) 50% 50%;
+	background: url(member1.png) 50% 50%/cover;
 }
 .ava + .ava{
-	background: url(member2.png) 50% 50%/99%;
+	left: 29%;
+    top: 58%;
+	background: url(member2.png) 50% 50%/104%;
 }
 .ava + .ava + .ava{
-	background: url(member3.png) 50% 50%;
+	top: 55%;
+    left: 46%;
+	background: url(member3.png) 50% 50%/cover;
 }
 .ava + .ava + .ava + .ava{
-	background: url(member4.png) 50% 50%;
+	left: 63%;
+    top: 60%;
+	background: url(member4.png) 50% 50%/cover;
 }
 .ava + .ava + .ava + .ava + .ava{
-	background: url(member5.png) 50% 50%;
+	left: 80%;
+    top: 52%;
+	background: url(member5.png) 50% 50%/cover;
 }
+.avaOnHover{
+	display: none;
+	position: relative;
+    top: 116%;
+    left: -60%;
+    width: 108px;
+}
+.part1{
+	display: inline-block;
+	width: 1px;
+	height: 30px;
+	border: 1px solid #ffffff;
+	opacity: 0.75;
+}
+.part2{
+	margin-top: 15px; 
+	color: #e74c3c;
+	font-family: "Open Sans";
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: 1.8px;
+}
+.part3{
+	color: #ffffff;
+	font-family: "Source Sans Pro";
+	font-size: 8px;
+	font-weight: bold;
+	line-height: 23.99px;
+	letter-spacing: 1.4px;
+}
+.ava:hover{
+	cursor: pointer;
+	transform: scale(1.35);
+	background:url(sloi.png) 50% 50%/cover, url(member1.png) 50% 50%/cover;
+	box-shadow: 0 5px 13px 2px #000000;
+	transition: .3s
+}
+.ava:hover > .avaOnHover{
+	display: block;
+}
+.ava + .ava:hover{
+	background:url(sloi.png) 50% 50%/cover, url(member2.png) 50% 50%/104%;
+}
+.ava + .ava + .ava:hover{
+	background:url(sloi.png) 50% 50%/cover, url(member3.png) 50% 50%/cover;
+}
+.ava + .ava + .ava + .ava:hover{
+	background:url(sloi.png) 50% 50%/cover, url(member4.png) 50% 50%/cover;
+}
+.ava + .ava + .ava + .ava +  .ava:hover{
+	background:url(sloi.png) 50% 50%/cover, url(member5.png) 50% 50%/cover;
+}
+
 .blockTenth{
 	padding: 150px 0;
 	background-color: #f4f5f9;
